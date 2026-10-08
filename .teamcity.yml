@@ -1,0 +1,11 @@
+jobs:
+  Build:
+    name: Build plugin
+    steps:
+      - type: gradle
+        tasks: clean build
+        use-gradle-wrapper: 'true'
+    files-publication:
+      - path: build/distributions/*.zip
+        publish-artifact: true
+    enable-dependency-cache: true

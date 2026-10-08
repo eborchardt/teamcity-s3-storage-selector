@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans
+                           http://www.springframework.org/schema/beans/spring-beans.xsd"
+       default-autowire="constructor">
+
+  <!--
+    Declaring the processor as a bean in the server Spring context is all the registration it
+    needs: TeamCity auto-discovers every BuildStartContextProcessor bean. Constructor autowiring
+    supplies the core ArtifactsStorageSettingsManager.
+  -->
+  <bean id="selectArtifactsStorageStartBuildProcessor"
+        class="com.eborchardt.teamcity.artifacts.s3selector.SelectArtifactsStorageStartBuildProcessor"/>
+
+</beans>
